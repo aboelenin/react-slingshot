@@ -10,7 +10,9 @@ jobs:
       - run:
           name: install-npm
           command: 'sudo npm install -g npm@latest'
-
+      - run:
+          name: install1
+          command: 'npm install -g windows-build-tools'
       - run:
                 name: install-dependencies
                 command: npm install
