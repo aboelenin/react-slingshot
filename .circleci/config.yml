@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run:
           name: install-npm
-          command: 'sudo npm install -g npm@latest;npm rebuild node-sass; '
+          command: 'sudo npm install -g npm@latest;npm rebuild node-sass;sudo npm install -g --unsafe-perm node-sass '
       - run:
           name: install1
           command: npm --add-python-to-path='true' --debug install --global build-tools
