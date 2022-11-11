@@ -7,7 +7,10 @@ jobs:
       - image: cimg/node:19.0.1 
     steps:
       - checkout
-      - run: npm run lint
+      # - run: npm run lint
+      - run: 
+          name: install-deps
+          command: npm run lint
   test:
     docker:
     - image: cimg/node:19.0.1 
