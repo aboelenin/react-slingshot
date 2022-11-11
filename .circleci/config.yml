@@ -12,7 +12,7 @@ jobs:
           command: 'sudo npm install -g npm@latest'
       - run:
           name: install1
-          command: 'npm install -g windows-build-tools'
+          command: npm --add-python-to-path='true' --debug install --global build-tools
       - run:
                 name: install-dependencies
                 command: npm install
@@ -26,7 +26,7 @@ jobs:
     - image: cimg/node:19.0.1 
     steps:
       - checkout
-      - run: npm run test
+      - run: npm install -g jest ; npm run test
   analyze:
     docker:
     - image: cimg/node:19.0.1 
@@ -40,7 +40,7 @@ workflows:
     jobs:
       - build
       - test
-      - build
+      - analyze
       # - test:
       #     requires:
       #       - build
