@@ -13,9 +13,9 @@ jobs:
       # - run:
       #     name: install1
       #     command: npm --add-python-to-path='true' --debug install --global build-tools
-      - run:
-                name: install-dependencies
-                command: npm install
+      # - run:
+      #           name: install-dependencies
+      #           command: npm install
 
       # - run: npm run lint
       - run: 
