@@ -7,6 +7,14 @@ jobs:
       - image: cimg/node:19.0.1 
     steps:
       - checkout
+      - run:
+          name: install-npm
+          command: 'sudo npm install -g npm@latest'
+
+      - run:
+                name: install-dependencies
+                command: npm install
+
       # - run: npm run lint
       - run: 
           name: linting
