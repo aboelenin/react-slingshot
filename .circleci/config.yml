@@ -4,7 +4,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/node:19.0.1 
+      - image: cimg/node:9.0.1 
     steps:
       - checkout
       - run:
@@ -23,13 +23,13 @@ jobs:
           command: npm run lint
   test:
     docker:
-    - image: cimg/node:19.0.1 
+    - image: cimg/node:9.0.1 
     steps:
       - checkout
       - run: npm install -g jest ; npm run test
   analyze:
     docker:
-    - image: cimg/node:19.0.1 
+    - image: cimg/node:9.0.1 
     steps:
       - checkout
       - run: npm audit
