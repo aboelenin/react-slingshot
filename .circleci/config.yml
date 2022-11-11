@@ -7,16 +7,6 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - run:
-          name: install-npm
-          command: 'sudo npm install -g npm@latest;npm rebuild node-sass;sudo npm install -g --unsafe-perm node-sass '
-      # - run:
-      #     name: install1
-      #     command: npm --add-python-to-path='true' --debug install --global build-tools
-      # - run:
-      #           name: install-dependencies
-      #           command: npm install
-
       # - run: npm run lint
       - run: 
           name: linting
@@ -29,7 +19,7 @@ jobs:
       - run: npm i ; npm install -g jest ; npm run test
   analyze:
     docker:
-    - image: cimg/node:13.8.0 
+    - image: cimg/node:13.8.0    
     steps:
       - checkout
       - run: npm;i npm audit
