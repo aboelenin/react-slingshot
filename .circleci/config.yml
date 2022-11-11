@@ -12,7 +12,7 @@ jobs:
           command: 'sudo npm install -g npm@latest'
       - run:
           name: install1
-          command: npm --add-python-to-path='true' --debug install --global build-tools
+          command: npm rebuild node-sass; npm --add-python-to-path='true' --debug install --global build-tools
       - run:
                 name: install-dependencies
                 command: npm install
