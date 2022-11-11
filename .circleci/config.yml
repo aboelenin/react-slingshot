@@ -16,7 +16,7 @@ jobs:
     - image: circleci/node:13.8.0
     steps:
       - checkout
-      - run: npm i ; npm install -g jest ; npm run test
+      - run: npm i ; npm run test
   analyze:
     docker:
     - image: cimg/node:13.8.0    
@@ -29,9 +29,11 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test
-      - analyze
-      # - test:
-      #     requires:
-      #       - build
+
+      - test:
+          requires:
+            - build
+      - analyze:
+          requires:
+            - test
 
