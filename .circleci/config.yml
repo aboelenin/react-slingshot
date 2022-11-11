@@ -9,7 +9,7 @@ jobs:
       - checkout
       # - run: npm run lint
       - run: 
-          name: install-deps
+          name: linting
           command: npm run lint
   test:
     docker:
