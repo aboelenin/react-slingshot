@@ -20,19 +20,19 @@ jobs:
       # - run: npm run lint
       - run: 
           name: linting
-          command: npm run lint
+          command: npm i; npm run lint
   test:
     docker:
     - image: cimg/node:9.0.1 
     steps:
       - checkout
-      - run: npm install -g jest ; npm run test
+      - run: npm i ; npm install -g jest ; npm run test
   analyze:
     docker:
     - image: cimg/node:9.0.1 
     steps:
       - checkout
-      - run: npm audit
+      - run: npm;i npm audit
 
         
 workflows:
